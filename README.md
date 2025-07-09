@@ -60,37 +60,95 @@ cd PlotsCart
 
 ### 2. Backend Setup (Spring Boot)
 
-Navigate to the backend directory:
+#### Step 1: Navigate to backend directory
 ```bash
 cd backend
 ```
 
-Install dependencies and run the backend:
+#### Step 2: Clean and build the project
 ```bash
-mvn clean install
+mvn clean package -DskipTests
+```
+
+#### Step 3: Run the backend server
+```bash
 java -jar target/plotscart-backend-0.0.1-SNAPSHOT.jar
+```
+
+**Alternative method (if above doesn't work):**
+```bash
+mvn spring-boot:run
 ```
 
 The backend server will start on `http://localhost:8010`
 
+**Note**: Keep this terminal open. The backend needs to keep running.
+
 ### 3. Frontend Setup (React)
 
-In a new terminal, navigate to the root directory:
+#### Step 1: Open a new terminal and navigate to project root
 ```bash
-cd ..
+cd /path/to/PlotsCart
 ```
 
-Install dependencies:
+#### Step 2: Install Node.js dependencies
 ```bash
 npm install
 ```
 
-Start the React development server:
+#### Step 3: Start the React development server
 ```bash
 npm start
 ```
 
-The frontend will start on `http://localhost:3000` or `http://localhost:3001`
+The frontend will automatically open in your browser at `http://localhost:3000` or `http://localhost:3001`
+
+## Quick Start Commands
+
+### For first-time setup:
+```bash
+# 1. Clone and navigate to project
+git clone https://github.com/Tejakrishna4988/PlotsCart.git
+cd PlotsCart
+
+# 2. Setup backend (Terminal 1)
+cd backend
+mvn clean package -DskipTests
+java -jar target/plotscart-backend-0.0.1-SNAPSHOT.jar
+
+# 3. Setup frontend (Terminal 2 - new terminal)
+cd /path/to/PlotsCart
+npm install
+npm start
+```
+
+### For subsequent runs:
+```bash
+# Terminal 1: Start backend
+cd backend
+java -jar target/plotscart-backend-0.0.1-SNAPSHOT.jar
+
+# Terminal 2: Start frontend
+npm start
+```
+
+## Troubleshooting
+
+### Backend Issues:
+- **Port 8010 already in use**: Kill existing process with `lsof -ti:8010 | xargs kill -9`
+- **Java version error**: Make sure you have Java 8 or higher installed
+- **Maven not found**: Install Maven or use `./mvnw` instead of `mvn`
+
+### Frontend Issues:
+- **Port 3000 already in use**: The app will automatically use port 3001
+- **npm command not found**: Install Node.js from https://nodejs.org/
+- **Dependencies error**: Delete `node_modules` and run `npm install` again
+
+### Database Access:
+- **H2 Console**: Visit `http://localhost:8010/api/h2-console`
+  - JDBC URL: `jdbc:h2:mem:plotscart`
+  - Username: `sa`
+  - Password: `password`
 
 ## API Endpoints
 
