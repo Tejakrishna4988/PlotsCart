@@ -36,7 +36,7 @@ A full-stack web application for buying and selling plots of land. Built with Re
 - **Responsive Design** - Mobile-first approach
 
 ### Backend (Java Spring Boot)
-- **Spring Boot 3.2** - Java application framework
+- **Spring Boot 2.7** - Java application framework
 - **Spring Data JPA** - Database abstraction layer
 - **H2 Database** - In-memory database for development
 - **Spring Web** - RESTful API development
@@ -47,15 +47,15 @@ A full-stack web application for buying and selling plots of land. Built with Re
 Before running this application, make sure you have:
 
 - **Node.js** (version 16 or higher)
-- **Java JDK** (version 17 or higher)
+- **Java JDK** (version 8 or higher)
 - **Maven** (version 3.6 or higher)
 
 ## Installation & Setup
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/plotscart.git
-cd plotscart
+git clone https://github.com/Tejakrishna4988/PlotsCart.git
+cd PlotsCart
 ```
 
 ### 2. Backend Setup (Spring Boot)
@@ -68,10 +68,10 @@ cd backend
 Install dependencies and run the backend:
 ```bash
 mvn clean install
-mvn spring-boot:run
+java -jar target/plotscart-backend-0.0.1-SNAPSHOT.jar
 ```
 
-The backend server will start on `http://localhost:8080`
+The backend server will start on `http://localhost:8010`
 
 ### 3. Frontend Setup (React)
 
@@ -90,7 +90,7 @@ Start the React development server:
 npm start
 ```
 
-The frontend will start on `http://localhost:3000`
+The frontend will start on `http://localhost:3000` or `http://localhost:3001`
 
 ## API Endpoints
 
@@ -179,7 +179,7 @@ All sample plots use the phone number `7780270405` for demonstration.
 ## Database
 
 - **Development**: H2 in-memory database
-- **Console**: Access at `http://localhost:8080/api/h2-console`
+- **Console**: Access at `http://localhost:8010/api/h2-console`
   - JDBC URL: `jdbc:h2:mem:plotscart`
   - Username: `sa`
   - Password: `password`
@@ -187,7 +187,7 @@ All sample plots use the phone number `7780270405` for demonstration.
 ## Development Notes
 
 ### CORS Configuration
-The backend is configured to accept requests from `http://localhost:3000` for development.
+The backend is configured to accept requests from `http://localhost:3000` and `http://localhost:3001` for development.
 
 ### Image Handling
 Currently uses image URLs. In production, consider implementing:
@@ -234,4 +234,4 @@ For support or questions:
 
 ---
 
-**Happy Plot Hunting! 🏡** 
+**Happy Plot Hunting! 🏡**
